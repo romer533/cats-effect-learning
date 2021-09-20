@@ -3,6 +3,7 @@ package com.hivetaxi
 import cats.instances.string._
 import cats.syntax.semigroup._
 import com.hivetaxi.part.first.PrintableInstances._
+import com.hivetaxi.part.first.PrintableSyntax.PrintableOps
 import com.hivetaxi.part.first.{Cat, Printable}
 
 object Main extends App {
@@ -16,5 +17,8 @@ object Main extends App {
   // Using the library
   val cat = Cat("Simba", 7, "Gray")
   Printable.print(cat)
+
+  // Better Syntax
+  cat.print
 
 }
