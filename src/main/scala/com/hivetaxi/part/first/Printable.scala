@@ -5,8 +5,9 @@ trait Printable[A] {
 }
 
 object PrintableInstances {
-  implicit val printableString: Printable[String] = (value: String) => value
-  implicit val printableInt: Printable[Int] = (value: Int) => value.toString
+  implicit val printableFromString: Printable[String] = (value: String) => value
+  implicit val printableFromInt: Printable[Int] = (value: Int) => value.toString
+  implicit val printableFromCat: Printable[Cat] = (value: Cat) => s"${value.name} is a ${value.age} year-old ${value.color} cat."
 }
 
 object Printable {
