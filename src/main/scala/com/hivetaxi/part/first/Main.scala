@@ -1,16 +1,15 @@
-package com.hivetaxi
+package com.hivetaxi.part.first
 
-import cats.implicits.toShow
+import cats.implicits.{catsSyntaxEq, catsSyntaxSemigroup, toShow}
 import cats.instances.int._
-import cats.Show
-import cats.implicits.toShow
 import cats.instances.string._
-import cats.syntax.eq._
-import cats.syntax.semigroup._
 import cats.{Eq, Show}
-import com.hivetaxi.part.first.PrintableInstances._
+import com.hivetaxi.part.first.PrintableInstances.{
+  printableFromCat,
+  printableFromInt,
+  printableFromString
+}
 import com.hivetaxi.part.first.PrintableSyntax.PrintableOps
-import com.hivetaxi.part.first.{Cat, Printable}
 
 object Main extends App {
 
