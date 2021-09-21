@@ -13,6 +13,9 @@ import com.hivetaxi.part.first.PrintableSyntax.PrintableOps
 
 object Main extends App {
 
+  // Part 1 for book Scala with Cats
+  // Introduction
+
   println("Hello " |+| "Cats!\n")
 
   // Printable library
