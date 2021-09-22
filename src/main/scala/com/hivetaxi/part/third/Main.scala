@@ -18,4 +18,16 @@ object Main extends App {
   }
   println(Tree.branch(Tree.leaf(15), Tree.leaf(10)).map(_ * 2))
 
+  // Transformative thinking with imap
+  implicit val stringCodec: Codec[String] =
+    new Codec[String] {
+      def encode(value: String): String = value
+      def decode(value: String): String = value
+    }
+  implicit val doubleCodec: Codec[Double] =
+    stringCodec.imap[Double](_.toDouble, _.toString)
+
+  implicit def boxCodec[A](implicit c: Codec[A]): Codec[Box[A]] =
+    c.imap[Box[A]](Box(_), _.v)
+
 }
