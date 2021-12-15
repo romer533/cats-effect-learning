@@ -1,4 +1,4 @@
-package com.hivetaxi.part.printableLibrary
+package com.hivetaxi.part.printable_library
 
 trait Printable[A] {
   def format(value: A): String
